@@ -7,3 +7,4 @@ A fuzzing helper script to generate individual, minimized crash files for furthe
 binary_min_diff.py original_file fuzzed_file
 ```
 
+![](2023-02-15-15-39-47.png)
