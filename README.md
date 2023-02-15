@@ -4,6 +4,6 @@ A script to generate individual, minimized crash files for further root cause an
 ### Usage:
 
 ```
-binary_min_diff.py file1 file2
+binary_min_diff.py original_file fuzzed_file
 ```
 
