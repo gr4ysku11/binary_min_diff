@@ -1,5 +1,5 @@
-# README
-A script to generate individual, minimized crash files for further root cause analysis
+# binary_min_diff
+A fuzzing helper script to generate individual, minimized crash files for further root cause analysis
 
 ### Usage:
 
