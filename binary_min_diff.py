@@ -20,7 +20,7 @@ orig_bytes = orig_file.read()
 fuzz_bytes = fuzz_file.read()
 
 # abort if file sizes differ
-if (len(orig_bytes != fuzz_bytes)):
+if (len(orig_bytes) != len(fuzz_bytes)):
     print("[ABORT] file lengths do not match!")
     exit()
 
