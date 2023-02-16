@@ -8,11 +8,11 @@ import sys
 orig_file = open(sys.argv[1], 'rb')
 fuzz_file = open(sys.argv[2], 'rb')
 
-# TODO
-# abort if both file sizes differ
-
-# TODO
-# parse file extension, if present
+# parse file extension
+# assumes original file has extension and fuzz/crash files do not
+# as is the case with afl, afl++, winafl, etc...
+ext_i = orig_file.name.rfind(".")
+ext = orig_file.name[ext_i+1:]
 
 orig_bytes = orig_file.read()
 fuzz_bytes = fuzz_file.read()
@@ -23,7 +23,8 @@ while(i < len(orig_bytes)):
 
     # if bytes differ, find next identical byte index
     if orig_bytes[i] != fuzz_bytes[i]:
-        diff_file = open("{0}_offset{1}".format(fuzz_file.name,i), 'wb')
+
+        diff_file = open("{0}_offset{1}.{2}".format(fuzz_file.name,i,ext), 'wb')
 
         # copy original bytes up to difference
         diff_file.write(orig_bytes[0:i])
