@@ -3,7 +3,7 @@
 import sys
 
 # exit if two args not passed in via argv
-if sys.argv.count != 3:
+if len(sys.argv) != 3:
     print("[USAGE] binary_min_diff.py <original file> <fuzzed crash file>")
     exit()
 
